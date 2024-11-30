@@ -4,77 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stín éteru</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #cfcfcf;
-            font-family: 'Georgia', serif;
-        }
-        
-        .horror-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/0.png');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ff0000;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        .blog-content {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
-        }
-
-        .first-letter::first-letter {
-            font-size: 3.5em;
-            float: left;
-            line-height: 0.8;
-            margin-right: 0.2em;
-            color: #ff0000;
-        }
-
-        .quote {
-            border-left: 4px solid #ff0000;
-            font-style: italic;
-            padding: 20px;
-            margin: 20px 0;
-            background-color: #333;
-        }
-
-        .author-section {
-            border-top: 2px solid #444;
-            margin-top: 40px;
-            padding-top: 20px;
-        }
-
-        .horror-link {
-            color: #ff0000;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .horror-link:hover {
-            color: #cc0000;
-            text-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <header class="horror-header mb-5">
         <div class="container">
             <h1 class="display-2 fw-bold">Stín éteru</h1>
-            <p class="lead">Príbeh, ktorý vám nedovolí zaspať</p>
+            <p class="lead">Příběh, který vás nenechá usnout</p>
         </div>
     </header>
 
     <main class="container mb-5">
-        <article class="blog-content p-5">
+        <article class="blog-content p-3 p-md-5">
             <div class="meta mb-4 text-danger">
                 <span class="me-3"><i class="bi bi-calendar"></i> 30. November 2024</span>
                 <span><i class="bi bi-person"></i> Autor: TatkaSmolko</span>
@@ -171,7 +114,7 @@
             <div class="author-section">
                 <div class="row align-items-center">
                     <div class="col-md-2">
-                        <img src="https://supabase.aethercosmology.eu/storage/v1/object/public/blog/tatkasmolko-150x150.webp" alt="Autor" class="img-fluid rounded-circle shadow-lg">
+                        <img src="https://supabase.aethercosmology.eu/storage/v1/object/public/blog/tatkasmolko-150x150.webp" alt="Autor" class="d-block mx-auto rounded-circle shadow-lg">
                     </div>
                     <div class="col-md-10">
                         <h5>O autorovi</h5>
@@ -220,6 +163,28 @@
         </div>
     </footer>
 
+    <!-- Audio prehrávač -->
+    <div class="audio-player-container">
+        <div class="custom-audio-player">
+            <audio id="bgMusic" loop>
+                <source src="horror-ambience.mp3" type="audio/mpeg">
+                <source src="horror-ambience.wav" type="audio/wav">
+                Váš prohlížeč nepodporuje audio prvek.
+            </audio>
+            <div class="audio-controls">
+                <button class="play-pause-btn" onclick="togglePlay()">
+                    <i class="fa-solid fa-play" id="playIcon"></i>
+                </button>
+                <div class="volume-control">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <input type="range" class="volume-slider" min="0" max="100" value="33" id="volumeSlider">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js" integrity="sha512-1JkMy1LR9bTo3psH+H4SV5bO2dFylgOy+UJhMus1zF4VEFuZVu5lsi4I6iIndE4N9p01z1554ZDcvMSjMaqCBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
